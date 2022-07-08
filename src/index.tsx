@@ -3,6 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { joki } from 'jokits-react';
+import { createResultService } from './services/ResultService';
+import { createSocketService } from './services/SocketService';
+import { createChatService } from './services/ChatService';
+
+joki.service.add({
+  serviceId: "resultsService",
+  service: createResultService
+});
+
+joki.service.add({
+  serviceId: "socketService",
+  service: createSocketService
+});
+
+joki.service.add({
+  serviceId: "chatService",
+  service: createChatService
+});
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
